@@ -77,58 +77,150 @@
       font-size: 0.9rem;
       width: fit-content;
     }
+
+    .scroll-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: none;
+      font-size: 18px;
+      padding: 8px 12px;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .scroll-btn.left {
+      left: 0;
+    }
+
+    .scroll-btn.right {
+      right: 0;
+    }
+    /* filter container */
+
+.filters-container{
+  position:relative;
+  display:flex;
+  align-items:center;
+}
+
+/* filter bar */
+
+#filters{
+  display:flex;
+  overflow-x:auto;
+  flex-wrap:nowrap;
+  gap:2rem;
+  padding:1rem 2rem;
+  scroll-behavior:smooth;
+  width:100%;
+}
+
+#filters::-webkit-scrollbar{
+  display:none;
+}
+
+/* filter item */
+
+.filter{
+  flex:0 0 auto;
+  text-align:center;
+  opacity:0.7;
+}
+
+.filter:hover{
+  opacity:1;
+}
+
+/* arrows */
+
+.filter-arrow{
+  position:absolute;
+  top:40%;
+  transform:translateY(-50%);
+  background:white;
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+  padding:6px 10px;
+  border-radius:50%;
+  box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+.filter-arrow.left{
+  left:-20px;
+}
+
+.filter-arrow.right{
+  right:-20px;
+}
+
   </style>
 
-  <div id="filters">
-    <div class="filter">
-      <div><i class="fa-solid fa-fire"></i></div>
-      <p>Trending</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-bed"></i></div>
-      <p>Rooms</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-mountain-city"></i></div>
-      <p>Iconic Cities</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-mountain"></i></div>
-      <p>Mountains</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-fort-awesome"></i></div>
-      <p>Castles</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-person-swimming"></i></div>
-      <p>Arctic Pools</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-campground"></i></div>
-      <p>Camping</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-cow"></i></div>
-      <p>Farms</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-snowflake"></i></div>
-      <p>Arctic</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-igloo"></i></div>
-      <p>Domes</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-ship"></i></div>
-      <p>Boats</p>
-    </div>
-    <div class="filter">
-      <div><i class="fa-solid fa-file-video"></i></div>
-      <p>Movie Date</p>
-    </div>
 
+  <div class="filters-container">
+
+    <button class="filter-arrow left" onclick="scrollFilters(-200)">
+      <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <div id="filters">
+      <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>Trending</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-bed"></i></div>
+        <p>Rooms</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain-city"></i></div>
+        <p>Iconic Cities</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain"></i></div>
+        <p>Mountains</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-fort-awesome"></i></div>
+        <p>Castles</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-person-swimming"></i></div>
+        <p>Arctic Pools</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-campground"></i></div>
+        <p>Camping</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-cow"></i></div>
+        <p>Farms</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-snowflake"></i></div>
+        <p>Arctic</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-igloo"></i></div>
+        <p>Domes</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-ship"></i></div>
+        <p>Boats</p>
+      </div>
+      <div class="filter">
+        <div><i class="fa-solid fa-file-video"></i></div>
+        <p>Movie Date</p>
+      </div>
+
+      <button class="filter-arrow right" onclick="scrollFilters(200)">
+        <i class="fa-solid fa-angle-right"></i>
+      </button>
+
+    </div>
   </div>
   <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
