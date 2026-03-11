@@ -24,10 +24,10 @@ body{
     color:#222222 !important;
 }
 .navbar-nav a:hover{
-    font-weight:400;
+    /* font-weight:400; */
     background-color:#f78c93;
-    border-radius:10px;
-    padding:5px 10px;
+    /* border-radius:10px; */
+    /* padding:5px 10px; */
 }
 
 /* footer */
@@ -160,6 +160,24 @@ font-size:1.5rem;
 #map{
 height:300px;
 width:100%;
+}
+
+.search-inp{
+width:100%;
+margin-bottom:10px;
+}
+
+.search-btn{
+width:100%;
+}
+
+form.d-flex{
+flex-direction:column;
+}
+
+.navbar-nav{
+text-align:center;
+margin-top:10px;
 }
 
 }
